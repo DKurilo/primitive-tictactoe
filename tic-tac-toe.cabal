@@ -1,0 +1,58 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 652af673a64e9fd948d78aa811c7d7dfbac7890ca6c96c09eeed17a643147f3d
+
+name:           tic-tac-toe
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/DKurilo/minesweeper#readme>
+author:         Dima Kurilo
+maintainer:     dkurilo@gmail.com
+copyright:      Dima Kurilo
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      TicTacToe
+  other-modules:
+      Paths_tic_tac_toe
+  hs-source-dirs:
+      lib
+  build-depends:
+      HUnit >=1.6 && <1.7
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+executable tic-tac-toe
+  main-is: Main.hs
+  other-modules:
+      Paths_tic_tac_toe
+  hs-source-dirs:
+      src
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit >=1.6 && <1.7
+    , base >=4.7 && <5
+    , tic-tac-toe
+  default-language: Haskell2010
+
+test-suite tic-tac-toe-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_tic_tac_toe
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit
+    , base >=4.7 && <5
+    , tic-tac-toe
+  default-language: Haskell2010
